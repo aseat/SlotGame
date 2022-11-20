@@ -1,0 +1,23 @@
+.container{
+  border: 2px solid;
+  margin: 0 auto;
+  width: 30%;
+  height: 30%;
+  background-color: darkorange;
+  margin-top: 10%;
+}
+.slots {
+  margin: 1% 4%;
+  width: 90%;
+  height: 8vh;
+  border: 2px solid;
+  border-color: black;
+  background-color: white;
+}
+.wrapper{
+  text-align: center;
+  padding:4.5% 0;
+}
+.title{
+  text-align: center;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+ 
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+ 
+<body>
+    <div class="container">
+      <div class="title">👇回ってるスロットを押してね👇</div>
+      <div class="slots">
+        <div class="wrapper" id="slots_a"></div>
+      </div>
+      <div class="slots">
+        <div class="wrapper" id="slots_b"></div>
+      </div>
+      <div class="slots">
+        <div class="wrapper" id="slots_c"></div>
+      </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+window.addEventListener("DOMContentLoaded",function(){
+  var items1 = ['佐倉綾音', '鬼頭明里', '上坂すみれ', '花澤香菜', '徳井青空'];
+  var slot1 = document.getElementById("slots_a");
+
+  var items2 = ['雪の日', '晴れの日', '雨の日', '曇りの日', '夜の日'];
+  var slot2 = document.getElementById("slots_b");
+
+  var items3 = ['たこ焼きパーティ', 'ライブに行く', '食べ歩き', '本を買う', 'カラオケ'];
+  var slot3 = document.getElementById("slots_c");
+  
+  let i = 0;
+  let btnFlag1 = 0;
+  function showMessage1(){
+    if(items1.length == i){
+      i = 0;
+    }
+    slot1.textContent = items1[i]+"と";
+    i++;
+  }
+
+  let y = 0;
+  let btnFlag2 = 0;
+  function showMessage2(){
+    if(items2.length == y){
+      y = 0;
+    }
+    slot2.textContent = items2[y]+"に";
+    y++;
+  }
+
+  let z = 0;
+  let btnFlag3 = 0;
+  function showMessage3(){
+    if(items3.length == z){
+      z = 0;
+    }
+    slot3.textContent = items3[z];
+    z++;
+  }
+
+  let setInterval1 = setInterval(showMessage1, 50);
+  slot1.addEventListener('click', () => {
+    if(btnFlag1 == 0){
+      btnFlag1 = 1;
+      window.clearInterval(setInterval1);
+    } else {
+      btnFlag1 = 0;
+      setInterval1 = setInterval(showMessage1, 50);
+    }
+  });
+
+  let setInterval2 = setInterval(showMessage2, 50);
+  slot2.addEventListener('click', () => {
+    if(btnFlag2 == 0){
+      btnFlag2 = 1;
+      window.clearInterval(setInterval2);
+    } else {
+      btnFlag2 = 0;
+      setInterval2 = setInterval(showMessage2, 50);
+    }
+  });
+
+  let setInterval3 = setInterval(showMessage3, 50);
+  slot3.addEventListener('click', () => {
+    if(btnFlag3 == 0){
+      btnFlag3 = 1;
+      window.clearInterval(setInterval3);
+    }else{
+      btnFlag3 = 0;
+      setInterval3 = setInterval(showMessage3, 50);
+    }
+    
+  });
+});
+</script>
+</html>
